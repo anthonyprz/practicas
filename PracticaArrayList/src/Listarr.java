@@ -8,7 +8,7 @@ public class Listarr {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> numeros = new ArrayList<String>();
-		System.out.println("numeros");
+		
 		try{
 			FileInputStream fis = new FileInputStream("numeros.txt");
 			InputStreamReader isr = new InputStreamReader(fis, "UTF8");
@@ -16,6 +16,7 @@ public class Listarr {
 			
 			String linea = br.readLine();
 			String [] campos = null;
+			Letra letras = new Letra();
 			
 			while(linea != null){
 				campos = linea.split(",");
@@ -24,16 +25,20 @@ public class Listarr {
 				sitios = campos[2];
 				sitios = campos[3];
 				sitios = campos[4];
+				letras.setLetra(campos[5]);
+				
 				numeros.add(sitios);
 				linea = br.readLine();
 			}
 				for (int i=0;i<numeros.size() ;i++ ){
 					System.out.println("estos son los numeros");
-					System.out.println((campos[0]));
-					System.out.println((campos[1]));
-					System.out.println((campos[2]));
-					System.out.println((campos[3]));
-					System.out.println((campos[4]));
+					System.out.println("-->"+(campos[0]));
+					System.out.println("-->"+(campos[1]));
+					System.out.println("-->"+(campos[2]));
+					System.out.println("-->"+(campos[3]));
+					System.out.println("-->"+(campos[4]));
+					System.out.println("esta es la letra");
+					System.out.println("-->"+(campos[5]));
 				}
 		}
 		catch(Exception ioe) {
